@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Your head content goes here -->
+    <title>My Django Website</title>
+    <!-- CSS and other static file references go here -->
+    <link rel="stylesheet" href="{% static 'web/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <!-- Your header content goes here -->
+        <h1>Welcome to My Website</h1>
+    </header>
+
+    <div class="content">
+        {% block content %}
+        <!-- This is where the specific content of each page will be inserted -->
+        {% endblock %}
+    </div>
+
+    <footer>
+        <!-- Your footer content goes here -->
+		<p>&copy; 2023 MezbaUddin.com. All rights reserved.</p>
+    </footer>
+
+    <!-- Additional scripts and other static file references go here -->
+</body>
+</html>
