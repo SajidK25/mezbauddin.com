@@ -34,7 +34,6 @@ ALLOWED_HOSTS = ['mezbauddin.com','185.219.142.16']
 INSTALLED_APPS = [
 	'web',
 	'staging',
-	'blog',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
