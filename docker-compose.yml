@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  db:
+    image: postgres
+    container_name: postgres-db
+    environment:
+      - POSTGRES_DB=mezproject_db
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=R1ng0B1ng0!
+      - POSTGRES_HOST=127.0.0.1
+    volumes:
+      - ./data/postgres/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: django-web
+    restart: on-failure
+    volumes:
+      - .:/code
+    command: bash -c "python manage.py makemigrations web --noinput && 
+                      python manage.py makemigrations staging --noinput && 
+                      python manage.py migrate --noinput && 
+                      python manage.py initadmin && 
+                      python manage.py runserver 0.0.0.0:8000 --settings=MezProject.settings_local"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db

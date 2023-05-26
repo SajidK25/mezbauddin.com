@@ -24,10 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g%e-j=!ucn88&m(kzmo__06v(skicl(v@d_5)+*-nsy2x(f$(f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['mezbauddin.com', 'localhost', '127.0.0.1']
-
+ADMINS = (
+    # ('Your Name', 'your_email@domain.com'),
+    ('admin', 'admin@mysite.com'),
+)
 # Application definition
 
 INSTALLED_APPS = [
@@ -85,7 +88,7 @@ DATABASES = {
         'NAME': 'mezproject_db',
         'USER': 'root',
         'PASSWORD': 'R1ng0B1ng0!',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }
@@ -125,7 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
