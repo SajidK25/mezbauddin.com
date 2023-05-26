@@ -26,13 +26,13 @@ SECRET_KEY = 'django-insecure-g%e-j=!ucn88&m(kzmo__06v(skicl(v@d_5)+*-nsy2x(f$(f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mezbauddin.com','185.219.142.16']
-
+ALLOWED_HOSTS = ['mezbauddin.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
 INSTALLED_APPS = [
 	'web',
+	'blog',
 	'staging',
     'django.contrib.admin',
     'django.contrib.auth',
