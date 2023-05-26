@@ -22,5 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('staging/', include('staging.urls')),
-    path('blog/', include('blog.urls')),  # Add this line for the blog app
 ]
