@@ -14,9 +14,7 @@ services:
     ports:
       - 5432:5432
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: tech99/mezbauddin-com:latest
     container_name: django-web
     restart: on-failure
     volumes:
