@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - dev_sajid
       - cicd_sajid
 
 env:
